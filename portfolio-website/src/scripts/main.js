@@ -99,3 +99,29 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+
+gsap.registerPlugin(SplitText) 
+
+var split = new SplitText("#title-a", {type: "chars"});
+var splitb = new SplitText("#title-aa", {type: "chars"});
+
+gsap.fromTo(split.chars, { 
+  y: 0, 
+},
+{
+  duration: 0.5, 
+  y: -20, 
+  stagger: 0.05
+}
+);
+
+gsap.fromTo(splitb.chars, { 
+  y: 38, 
+},
+{
+  duration: 0.5, 
+  y: -20, 
+  stagger: 0.05
+}
+);

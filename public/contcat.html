@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/styles/main.css">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div>
+                <a href="./index.html" class="nav-text">Home</a>
+                <a href="./about.html" class="nav-text">About</a>
+                <a href="./projects.html" class="nav-text">Projects</a>
+                <a href="./contcat.html" class="nav-text">Contact</a>       
+            </div>
+           <div>
+        <a href="" target="_blank"> <img src="./src/document/icons8-backend-development-64.png" class="nav-icon"
+            style="float:right;"></a>
+
+        <a href="https://www.linkedin.com/in/akash-m-0798a52a9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+          target="_blank">
+          <img src="./src/document/icons8-linkedin-96.png" class="nav-icon" style="float:right;"></a>
+        <a href="royalakash172@gmail.com" target="_blank"><img src="./src/document/icons8-gmail-64.png" class="nav-icon"
+            style="float:right;"></a>
+        <a href="https://github.com/Akash9014" target="_blank">
+          <img src="./src/document/icons8-github-64.png" class="nav-icon" style="float:right;"></a>
+      </div>
+        </nav>
+    </header>
+
+    <section class="contact">
+        <h2>Contact Me</h2>
+
+        <!-- Small draggable thumbnail -->
+        <div class="initial">
+            <div class="thumbnail">Click me!</div>
+        </div>
+
+        <!-- Full-size contact form -->
+        <div class="container">
+            <div class="full-size">
+                <form id="contact-form">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="tel" name="number" placeholder="Phone" required>
+                    <textarea name="message" placeholder="Message" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        emailjs.init("YOUR_PUBLIC_KEY"); // Get it from emailjs.com
+
+        const form = document.getElementById("contact-form");
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
+                .then(() => alert("Message sent!"), (err) => alert("Error: " + err.text));
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="./src/scripts/main.js"></script>
+</body>
+
+</html>
